@@ -4,17 +4,26 @@
 $kimberly: #70769b
 $green: #08f429
 $moon-raker: #e5daf9
-$mine-shaft: #363636
+$dark-gray: #363636
 $storm-gray: #696e88
 $mine-shaft: #363636
 $gray: #898787
 $havelock-blue: #4183d7
 $white: #FFF
 
+// ------ Mixin ------//
+// taken from bourbon
+=clearfix
+  &::after
+    clear: both
+    content: ""
+    display: table
+
 // ------ Global style ------//
+*
+  box-sizing: border-box
 
 body
-  background-color: $mine-shaft
   font-family: 'Open Sans', sans-serif
 
 .button
@@ -34,7 +43,7 @@ body
   background: rgba($moon-raker,0.3)
 
 .button_small
-  padding: .3rem 1.5rem
+  padding: .3rem 1rem
 
 .wrapper
   width: 1440px
@@ -71,7 +80,7 @@ body
         margin-left: 2rem
 
   .content
-    padding: 2.5rem 0 6rem 0
+    padding: 4rem 0 8rem 0
 
     .title,.sub-title
       color: $white
@@ -94,6 +103,42 @@ body
 
       .button
         margin: 0 1rem
+
+// ------ Services ------//
+#services
+  background-color: $moon-raker
+  padding: 2rem 0 6.5rem 0
+  position: relative
+  +clearfix
+
+  .service
+    background : $white
+    width: 31%
+    float: left
+    margin: -5rem 1% 0 1%
+    padding: 3rem 1.5%
+    text-align: center
+    position: relative
+    -webkit-box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.25)
+    -moz-box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.25)
+    box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.25)
+    border-radius: .4rem
+
+    h3
+      letter-spacing: -1px
+      font-size: 2rem
+      color: $dark-gray
+      margin: 0
+
+    p
+      margin: 1rem 0 2rem 0
+      color: $dark-gray
+      font-size: 1.2rem
+      letter-spacing: -1px
+      line-height: 1.8rem
+
+    .button
+      padding: .5rem 2rem
 
 
 
