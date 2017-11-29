@@ -1,3 +1,5 @@
+@import 'bourbon/bourbon'
+
 // ------ Variable ------//
 // http://websemantics.github.io/Color-Palette-Toolkit/
 
@@ -44,6 +46,10 @@ body
 
 .button_small
   padding: .3rem 1rem
+
+.button_large
+  padding: 1rem 5rem
+  font-size: 1.35rem
 
 .wrapper
   width: 1440px
@@ -132,7 +138,7 @@ body
 
     p
       margin: 1rem 0 2rem 0
-      color: $dark-gray
+      color: $kimberly
       font-size: 1.2rem
       letter-spacing: -1px
       line-height: 1.8rem
@@ -140,7 +146,149 @@ body
     .button
       padding: .5rem 2rem
 
+// ------ Our Clients ------//
+
+#our-clients
+  background: $dark-gray
+  padding: 5rem 0 30rem 0
+  text-align: center
+  position: relative
+  overflow: hidden
+
+  .title
+    color: $white
+    font-size: 2.5rem
+    margin: 0
+
+  .bar
+    border: 0
+    width: 250px
+    height: 2px
+    background: $havelock-blue
+    background-image: linear-gradient(to right, #71A6EA, $havelock-blue, #71A6EA)
+
+  .logos
+    width: 750px
+    max-width: 95%
+
+  .logo-text-container
+    margin: 0 auto
+    max-width: 670px
+    +display(flex)
+    +align-items(center)
+    +justify-content(space-between)
+
+    p
+      color: $havelock-blue
+      +display(inline-flex)
 
 
+      // &:nth-child(1)
+      //   padding-left: 5px
 
+      // &:nth-child(2)
+      //   padding-left: 15px
 
+      // &:nth-child(3)
+      //   padding-left: 15px
+
+      // &:nth-child(4)
+      //   margin-left: 5px
+
+      // &:nth-child(5)
+      //   padding-left: 15px
+
+  #slider_buttons
+    list-style: none
+    padding: 0
+    margin: 2rem 0
+
+    a
+      text-decoration: none
+
+    li
+      width: 9px
+      height: 9px
+      margin: 0 .5rem
+      position: relative
+      border-radius: 100%
+      display: inline-block
+      background: $storm-gray
+      -webkit-transition: background .4s ease-in-out
+      -o-transition: background .4s ease-in-out
+      transition: background .4s ease-in-out
+
+      &:hover
+        background: $green
+
+    .current
+      background-color: $green
+
+  #slider
+    list-style: none
+
+    li
+      width: 600px
+      height: 450px
+      overflow: hidden
+      background-color: $white
+      -webkit-box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.25)
+      -moz-box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.25)
+      box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.25)
+      position: absolute
+      z-index: 3
+      border-radius: .35rem .35rem 0 0
+
+      img
+        width: 100%
+
+      &:nth-child(1)
+        bottom: -37px
+        left: 2.5%
+        z-index: 2
+
+      &:nth-child(2)
+        left: 50%
+        margin-left: -300px
+        z-index: 4
+        bottom: 0
+
+      &:nth-child(3)
+        bottom: -37px
+        right: 2.5%
+        z-index: 2
+
+// ------ Get in touch ------//
+
+#contact
+  background: $moon-raker
+  padding: 5rem 0 7rem 0
+  text-align: center
+
+  .title
+    font-size: 2.5rem
+    color: $dark-gray
+    margin: 0
+
+  .sub-title
+    font-size: 1.5rem
+    color: $kimberly
+    width: 600px
+    max-width: 100%
+    margin: 1.5rem auto 5rem auto
+    display: block
+
+footer
+  padding: 1rem 0
+
+  .copyright
+    text-align: center
+    font-weight: 700
+    color: $gray
+
+    a
+      text-decoration: none
+      color: $green
+
+    span
+      font-weight: 300
