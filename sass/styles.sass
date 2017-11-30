@@ -27,6 +27,7 @@ $white: #FFF
 
 body
   font-family: 'Open Sans', sans-serif
+  -webkit-font-smoothing: antialiased
 
 .button
   border: none
@@ -43,6 +44,9 @@ body
 
 .button_secondary
   background: rgba($moon-raker,0.3)
+
+  &:hover
+    background: rgba($moon-raker,0.35)
 
 .button_small
   padding: .3rem 1rem
@@ -85,6 +89,9 @@ body
         text-decoration: none
         margin-left: 2rem
 
+        &:hover
+          color: $green
+
   .content
     padding: 4rem 0 8rem 0
 
@@ -102,6 +109,17 @@ body
       width: 750px
       margin: 2rem auto 2rem auto
       line-height: 1.65
+
+    .arrow-wrapper
+      padding-top: 2rem
+
+      .see_more
+        display: block
+        margin: auto auto
+        // position: absolute
+        // left: 50%
+        // margin-left: -13px
+        // bottom: -105px
 
     .button_wrapper
       text-align: center
@@ -277,6 +295,7 @@ body
     max-width: 100%
     margin: 1.5rem auto 5rem auto
     display: block
+    line-height: 2rem
 
 footer
   padding: 1rem 0
