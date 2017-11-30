@@ -20,14 +20,14 @@ gulp.task('serve',  function() {
       notify: false,
       // Customize the Browsersync console logging prefix
       logPrefix: 'SuperAwesome',
-      server: "./build/"
+      server: "./docs/"
     });
 
     gulp.watch("./pug/*.pug", ['pug']);                              // compiled pug files
     gulp.watch("./sass/styles.sass", ['sass']);                     				 // compiled pug files
-    gulp.watch("./build/*.html").on('change', browserSync.reload);   // reload for change .html files
-    gulp.watch("./build/css/*.css").on('change', browserSync.reload);   // reload for change .html files
-    // gulp.watch("./build/*.html", ['htmlbeautify']);                	 // Formatting html files (after compile any pug files)
+    gulp.watch("./docs/*.html").on('change', browserSync.reload);   // reload for change .html files
+    gulp.watch("./docs/css/*.css").on('change', browserSync.reload);   // reload for change .html files
+    // gulp.watch("./docs/*.html", ['htmlbeautify']);                	 // Formatting html files (after compile any pug files)
 
 });
 
@@ -38,7 +38,7 @@ gulp.task('pug', function() {
           errorHandler: notify.onError()
       }))
       .pipe(pug({pretty:true, doctype:'HTML'}))
-      .pipe(gulp.dest("./build/"))
+      .pipe(gulp.dest("./docs/"))
       .pipe(htmlbeautify())
       .pipe(browserSync.stream());
 });
@@ -68,7 +68,7 @@ gulp.task('sass', function () {
         console.error('Error!', err.message);
     })
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./build/css'));
+    .pipe(gulp.dest('./docs/css'));
 });
 
 // formatted html files
@@ -85,9 +85,9 @@ gulp.task('htmlbeautify', function() {
         ]
 
     };
-gulp.src('./build/*.html')
+gulp.src('./docs/*.html')
     .pipe(htmlbeautify(options))
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('./docs/'));
 });
 
 // default
@@ -98,5 +98,5 @@ gulp.task('default', ['sass','serve', 'pug']);
 // 	.pipe(pug({
 // 		pretty: true
 // 	}))
-// 	.pipe(gulp.dest('./build'));
+// 	.pipe(gulp.dest('./docs'));
 // });
